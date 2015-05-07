@@ -1,0 +1,228 @@
+body {
+	margin: 0px;
+	padding: 0px;
+	font-family: "Arial";
+	font-size: 20px;
+}
+
+#header_menu {
+	/*
+	 renkleri background rengini paint ile almak zorunda kaldim
+	 o yuzden rgb kodunu verdim.
+	 */
+	float: left;
+	background: rgb(37, 37, 37);
+	width: 100%;
+	height: 25px;
+	color: #ffffff;
+	padding-bottom: 20px;
+}
+
+#header_menu_link {
+	/*
+	icerik alani icin padding kullanilmasi daha uygunmus. 
+	padding hakkinda bilgi:
+	http://fatihhayrioglu.com/css-kutu-modeli-padding-ozellikleri/
+	*/
+	padding-left: 75px;
+	color: #ffffff;
+	font-size: 14px;
+	padding-top: 10px;
+
+}
+
+#header_menu_link > a {
+	/*
+	Bu kisim fade effect olayi icin var.
+	Kaynak: http://stackoverflow.com/a/6008409/3821823
+	Link uzerine gelince yapilan gecisler daha efektif oluyor.
+	*/
+	float: left;
+	color: #ffffff;
+	-o-transition:.5s;
+	-ms-transition:.5s;
+	-moz-transition:.5s;
+	-webkit-transition:.5s;
+	transition:.5s;
+}
+
+#header_menu_link > a:link {
+	/*
+	falanca_id > falanca_html_elementi seklinde aktarima bagli kullanim vardir.
+	*/
+	color: #ffffff;
+	text-decoration: none;
+	padding-left: 15px;
+}
+
+#header_menu_link > a:visited {
+	/*
+	ziyaret edilmiş linkler unvisited durumdaki linkle aynı rengi alıyor.
+	*/
+	color: #ffffff;
+}
+
+#header_menu_link > a:hover {
+	/*
+	Link uzerine gelince degisecek renk mouse over olayi.
+	Bu renk tek basina duz degisimde
+	Ancak yukaridaki a elementi yakalanip fade effect uygulanmistir.
+	Fade effect uygulanmasindan dolayi gecisler daha hos bir goruntudedir.
+	*/
+	color: red;
+}
+
+#header_menu_link > a:active {
+	/*
+	CSS'de active elementi arguman olarak gonderildigi
+	elementin uzerine basili tutunca devreye girer.
+	*/
+	color: red;
+}
+
+#header_menu_cur {
+	/*
+	Sag taraftaki kur bolumunu once bir div icinde saga tasidim.
+	Container gorevi goruyor.
+	*/
+	float: right;
+	color: rgb(119, 119, 119);
+}
+
+#header_menu_cur_el {
+	/*
+	Daha sonra icerideki elementleri aldim yani ogeleri.
+	*/
+	float: left;
+	padding-right: 100px;
+	font-size: 15px;
+	padding-bottom: 10px;
+	
+}
+
+#header_menu_cur_el > select {
+	/*
+	Bu kisim jquery ile calisinca transform uygulaniyor.
+	Yani aslinda bir fade effect gibi. Ancak bunu ogrenmedik henuz.
+
+	cursor: http://www.w3schools.com/cssref/pr_class_cursor.asp
+
+	cursor selectbox ve button uzerine gelince isaretci cikarir.
+	*/
+	background: #ffffff;
+	width: 118px;
+	height: 26px;
+	padding: 4px 15px 4px 5px;
+	border: 0px;
+	border-style: solid; /* select icin kenarlik belli olmuyor ama var. */
+	cursor: pointer;
+
+}
+
+#header_menu_cur_el > button {
+	/*
+	HTML'de input kontrolunun daha gelismi bir versiyonudur button kullanimi
+	http://www.w3schools.com/tags/tag_button.asp
+	*/
+	color: #ffffff;
+	background-color: red;
+	border: 0px;
+	height: 26px;
+	margin-left: 5px;
+	cursor: pointer;
+}
+
+#banner_area {
+	/*
+	banner kismi yani kirmizi bolgenin ilk varsayilanlari.
+	*/
+	width: 100%;
+	height: 130px;
+	background-color: rgb(241, 1, 2);
+	color: #ffffff;
+	float: left;
+}
+
+#banner_content {
+	/*
+	banner iceriginin ilk varsayilanlari da burada.
+	font-weight yazinin formatini belirler; kalin, italik vs.
+	*/
+	float: left;
+	padding-left: 90px;
+	padding-top: 20px;
+	font-weight: bold;
+}
+
+#banner_content_logo > a:link {
+	/*
+	logo kismini link tabanli text olarak ekledim.
+	dynamic website formatina uygun olmasi acisinda.
+	banner title dedigimiz kisim bilgileri veritabanindan cekiyor olabilirdi.
+	*/
+	font-size: 50px;
+	color: #ffffff;
+	text-decoration: none; /* alt cizgiyi kaldirmak acisindan. */
+}
+
+#banner_content_logo > a:hover {
+	/* uzerine gelince link herhangi bir renk vermesin. */
+	color: #ffffff;
+}
+
+#banner_content_logo > a:visited {
+	/* 
+	ziyaret edilip edilmedigi hakkinda bilgi dondurur. 
+	mantigi logo, banner oldugu icin renk degismez.
+	*/
+	color: #ffffff;
+}
+
+#banner_content_logo > a:active {
+	color: #ffffff;
+}
+
+#banner_content_logo > span {
+	font-size: 12px;
+}
+
+#banner_content_basket {
+	float: left;
+}
+
+#banner_basket {
+	float: left;
+	margin-right: 100px;
+	background-image: url('../images/cart.gif');
+	position: absolute;
+	right: 0px;
+	top: 69px;
+	width: 82px;
+	height: 74px;
+	text-align: center;
+	text-decoration: none;
+	padding: 8px 0 0 0;
+}
+
+#banner_basket > a {
+
+	color: #ffffff;
+	-o-transition:.5s;
+	-ms-transition:.5s;
+	-moz-transition:.5s;
+	-webkit-transition:.5s;
+	transition:.5s;
+}
+
+#banner_basket > a:link {
+	color: #ffffff;
+	text-decoration: none;
+}
+
+#banner_basket > a:hover {
+	color: red;
+}
+
+#banner_basket > a:active {
+	color: red;
+}
