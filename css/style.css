@@ -109,7 +109,8 @@ body {
 
 	cursor selectbox ve button uzerine gelince isaretci cikarir.
 	*/
-	background: #ffffff;
+	background: #fcfcfc;
+	color: #888;
 	width: 118px;
 	height: 26px;
 	padding: 4px 15px 4px 5px;
@@ -179,18 +180,29 @@ body {
 }
 
 #banner_content_logo > a:active {
+	/* active renk default olarak beyaz. */
 	color: #ffffff;
 }
 
 #banner_content_logo > span {
+	/* logo altindaki description area.
+	bu kisim bilincli olarak span icine alindi. */
 	font-size: 12px;
 }
 
 #banner_content_basket {
+	/*
+	sepet kismi icin ilk div olusturuldu.
+	*/
 	float: left;
 }
 
 #banner_basket {
+	/*
+	sepet pozisyonu vs. ayarlamalari.
+	position: absolute mutlak konumlandirma icindir.
+	bkz: http://fatihhayrioglu.com/css-ile-konumlandirmapositioning/
+	*/
 	float: left;
 	margin-right: 100px;
 	background-image: url('../images/cart.gif');
@@ -205,7 +217,10 @@ body {
 }
 
 #banner_basket > a {
-
+	/*
+	sepet uzerinde normalde kac adet sepet elemani var onu gosterir.
+	o bolge linklendirilecegi icin hos bi transition (transform) uygulandi.
+	*/
 	color: #ffffff;
 	-o-transition:.5s;
 	-ms-transition:.5s;
@@ -215,14 +230,151 @@ body {
 }
 
 #banner_basket > a:link {
+	/*
+	varsayilan
+	*/
 	color: #ffffff;
 	text-decoration: none;
 }
 
 #banner_basket > a:hover {
+	/*
+	uzerine gelindiginde
+	*/
 	color: red;
 }
 
 #banner_basket > a:active {
+	/*
+	basili tutuldugunda
+	*/
 	color: red;
+}
+
+#menu_area {
+	/*
+	menu bolumu. normalde arkaplan gorselini ps ile hazirlayacaktim.
+	ancak ps ile hazirlanan gorsel demek sayfa her cagirildiginda yeni bir
+	http request demektir. bu da sayfa hizini dusurecektir. bu yuzden
+	css linear gradient gri tonlarinda toplamda iki renk icin %95 uygulandi.
+	*/
+	float: left;
+	background: linear-gradient(#fcfcfc 30%, #e3e3e3 65%);
+    width: 100%;
+    height: 60px;
+}
+
+#menu_area .menu{
+	/*
+	menu bolumu. pozisyonu mutlak olarak uygulanmistir.
+	border left 1 px verildi. soldan 1 px kalinlik.
+	*/
+	position: absolute;
+	top: 175px;
+	left: 75px;
+	border-left: 1px solid #d6d5d5;
+}
+#menu_area .menu > ul{
+	/*
+	menu ul elemanlari. burada bilinmeyen sey overflow nesnesidir.
+	bu nesne hidden parametresini aldigi zaman tasmalari gostermez.
+	eger ki bir tasma olursa.
+	*/
+	float: left;
+	padding: 0;
+	margin: 0;
+	overflow: hidden;
+}
+#menu_area .menu > ul li{
+	/*
+	menunun liste elemanlari. float left tabii ki.
+	border-right sagdan solid olacak sekilde 1 px gri tonunda kalinlik ver.
+	*/
+	float: left;
+	border-right: 1px solid #d6d5d5;
+}
+#menu_area .menu > ul li a{
+	/*
+	font boyutunu tutturmak baya zor oldu. site genelinde arial kullaniyorum.
+	text-transform uppercase ozelligi ile metni buyultur. html'de zaten buyuk
+	ama kucuk yazsaydim da buyurdu. ornek icin reviews linki kucuk yazilmistir.
+	bkz: http://fatihhayrioglu.com/cssde-metintext-ozellikleri/
+	*/
+	font:700 17px/20px 'Arial', sans-serif;
+	text-decoration:none;
+	text-transform:uppercase;
+	padding:18px 20px 23px 19px;
+	display:block;
+	-moz-transition: all 0.4s ease 0s;
+	-webkit-transition: all 0.4s ease 0s;
+	-o-transition: all 0.4s ease 0s;
+}
+
+
+#menu_area .menu > ul li a:link {
+	/*
+	link rengi.
+	*/
+	color: #000;
+}
+#menu_area .menu > ul li a:visited {
+	/*
+	ziyaret edilen
+	*/
+	color: #000;
+}
+
+#menu_area .menu > ul li a:hover{
+	/*
+	menu linklerinin uzerine gelince ne olacagini soyluyor.
+	repeat-x yana dogru devam et demek. cat-act.gif dosyasi normalde
+	2x61 boyutlarda repeat-x il belirli sekilde devam ettirebiliriz.
+	*/
+	color:#fff;
+	background:url(../images/cat-act.gif) repeat-x 0 0 #202020;
+	-moz-transition: all 0.4s ease 0s;
+	-webkit-transition: all 0.4s ease 0s;
+	-o-transition: all 0.4s ease 0s;
+}
+
+#menu_area .menu #cur-sel {
+	/*
+	secili olan link yani aslinda bulunan sayfadaki linki renklendirir.
+	transition olayi burada da mevcuttur.
+	*/
+	color:#fff;
+	background:url(../images/cat-act.gif) repeat-x 0 0 #202020;
+	-moz-transition: all 0.4s ease 0s;
+	-webkit-transition: all 0.4s ease 0s;
+	-o-transition: all 0.4s ease 0s;
+}
+
+#search input[type="text"] {
+	/*
+	type text olan butun search id'li kutucuklara bu uygulanacak.
+	clear, float'in etkisini yok etmek icin vardir.
+	bkz: http://fatihhayrioglu.com/float-ve-clear-ozellikler-ile-konumlandirma/
+	outline: none ifadesi ise;
+	search form kismina erisip input'a tiklandigi zaman,
+	olusan mavi cerceveyi yok eder.
+	bkz: http://fatihhayrioglu.com/dis-hat-cizgisioutline-ozellikleri/
+	border 1px verdim dis cizgiyi solid verdim duz cizgi seklinde.
+	rengini ise grinin bir tonu olarak ayarladim.
+	background-image ise search icon olarak var.
+	background-position ise icon nerede duracak onu belirlemek icin.
+	background-repeat ise arkaplan olarak eklenen gorsel tekrarlanacak mi ona bakar.
+	bkz: http://fatihhayrioglu.com/hizli-css-referansi/
+	*/
+	float: right;
+	clear: both;
+	margin-right: 100px;
+	padding-left: 5px;
+	height: 35px;
+	width: 160px;
+	margin-top: 12px;
+	outline: none;
+	border: 1px solid #d6d5d5;
+	background-image: url('../images/search.gif');
+	background-position: 122px -2px;
+	background-repeat: no-repeat;
 }
