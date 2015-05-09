@@ -108,16 +108,37 @@ body {
 	cursor: http://www.w3schools.com/cssref/pr_class_cursor.asp
 
 	cursor selectbox ve button uzerine gelince isaretci cikarir.
+	overflow:hidden tasmalari engellemek icin.
+	-webkit-appearance chrome icin var olan gorunumu none yapar
+	ancak bu webkit projesini taban alan tarayicilarda gecerlidir.
+	moz-appearance ise mozillayi taban alan tum tarayicilar icin
+	gorunumu none kilar yani select'in varsayilan down arrow'u artik yok
+	onun yerine sag tarafta bir arrow var.
 	*/
 	background: #fcfcfc;
 	color: #888;
 	width: 118px;
 	height: 26px;
 	padding: 4px 15px 4px 5px;
-	border: 0px;
+	border: 0px solid #ccc;
 	border-style: solid; /* select icin kenarlik belli olmuyor ama var. */
 	cursor: pointer;
+	overflow: hidden;
+	background: url('../images/cur-arrow.gif') no-repeat right #fff;
+	-webkit-appearance: none;
+	 -moz-appearance: none;
+	 text-overflow: '';
+	 text-indent: 0.1px;
 
+}
+
+#header_menu_cur_el > select::-ms-expand {
+	/*
+	acik kaynak dusmani ie ayrica developer dusmani da oluyor.
+	down arrow diger tarayicilarda iyi calisirken bunda bozuluyordu.
+	onu duzenledim. artik custom down arrow calisiyor.
+	*/
+	display: none;
 }
 
 #header_menu_cur_el > button {
@@ -292,6 +313,7 @@ body {
 	*/
 	float: left;
 	border-right: 1px solid #d6d5d5;
+	list-style-type: none;
 }
 #menu_area .menu > ul li a{
 	/*
