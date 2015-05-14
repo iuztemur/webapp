@@ -1,6 +1,6 @@
 # webapp
 
-**Status: Development**
+**Status: Finished**
 
 This work for me my homework. Computer E-commerce Site HTML &amp; CSS made on Sublime Text 3
 
